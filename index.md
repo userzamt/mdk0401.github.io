@@ -1,15 +1,45 @@
 # МДК 04.01 Внедрение и поддержка компьютерных систем
 ## Меню
 **Bash**
-[Lesson02](./Bash/Lesson02/lesson02.md)
-[Lesson03](Bash/Lesson03/lesson03.md)
-[Lesson04](Bash/Lesson04/lesson04.md)
-[Lesson05](Bash/Lesson05/lesson05.md)
-[Lesson06](Bash/Lesson06/lesson06.md)
-[Lesson07](Bash/Lesson07/lesson07.md)
-[Lesson08](Bash/Lesson08/lesson08.md)
-[Lesson09](Bash/Lesson09/lesson09.md)
-[Lesson10](Bash/Lesson10/lesson10.md)
-[Lesson11](Bash/Lesson11/lesson11.md)
-[Lesson12](Bash/Lesson12/lesson12.md)
 
+[Урок 02. Основные команды GNU\Linux](./Bash/Lesson02/lesson02.md) 
+
+[Урок 03. Shell. Переменные. Математика. Настройка среды разработки](Bash/Lesson03/lesson03.md)
+
+[Урок 04. Подстановка параметров. Строки](Bash/Lesson04/lesson04.md)  
+
+[Урок 05. Массивы](Bash/Lesson05/lesson05.md)
+
+[Урок 06. Ветвление. Операции сравнения. Сравнение файлов](Bash/Lesson06/lesson06.md)
+
+[Урок 07. Циклы](Bash/Lesson07/lesson07.md)
+
+[Урок 08. Ввод и вывод](Bash/Lesson08/lesson08.md)
+
+[Урок 09. Функции](Bash/Lesson09/lesson09.md)
+
+[Урок 10. sed и обработка текстов](Bash/Lesson10/lesson10.md)
+
+[Урок 11. Язык обработки данных awk](Bash/Lesson11/lesson11.md)
+
+[Урок 12. Регулярные выражения](Bash/Lesson12/lesson12.md)
+
+**PowerShell**
+
+[Урок 13. PowerShell. Основные понятия](Powershell/Lesson13/lesson13.md)
+
+[Урок 13. PowerShell. Основные понятия](.)
+
+[Урок 13. Объединение команд](.)
+
+[Урок 13. Поток управления](.)
+
+[Урок 13. Обработка ошибок](.)
+
+[Урок 13. Функции в PowerShell](.)
+
+[Урок 13. Модули](.)
+
+[Урок 13. Парсинг структурированных данных](.)
+
+[Урок 13. Работа с Active Directory](.)

@@ -321,6 +321,17 @@ echo "Display last 3 symbols: ${TEST_STR: -3:3}"  # Первый способ
 echo "Display last 3 symbols: ${TEST_STR:(-3):3}" # Второй способ
 ```
 
+### Замена подстрок
+
+```bash
+TEST_STR="Very long long string with spaces."
+echo "(Original string) $TEST_STR"
+
+echo "(Replace 'long' by 'short') ${TEST_STR//long/short}"  # Заменить все вхождения 'long' на 'short'
+echo "(Replace 'long' by 'short') ${TEST_STR/long/short}"   # Заменить только первое вхождение 'long' на 'short'
+echo "(Remove 'long' from the text) ${TEST_STR//long }"     # Удалить все вхождения 'long'. Фактически мы заменяем их строкой нулевой длины
+echo "(Remove 'long' from the text) ${TEST_STR/long }"      # Удалить только первое вхождение 'long'
+```
 
 ## Скобочные подстановки
 **Скобочные подстановки** (Brace Expansion) обычно используются для генерации списков, в которых есть комбинаторные закономерности. Обычно это полезно в циклах ```for``` и при заполнении массивов некоторыми данными.

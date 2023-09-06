@@ -288,3 +288,21 @@ echo "a = $a"      # a = xyz
 : ${EMPTYNESS:?"is NULL or string empty"} # Сценарий будет аварийно прерван с сообщением, указанным после :?, если переменная раскрывается в пустоту или в строку нулевой длины.
 ```
 
+### Работа с регистром символов
+
+```bash
+TEST_STR="sOmE_Text@123"
+echo "(Original test)" ${TEST_STR}
+
+echo "(To upper case)" ${TEST_STR^^}                     # Перевести все символы в верхний регистр
+echo "(To upper case for first letter)" ${TEST_STR^}     # Перевести в верхний регистр только первый символ строки
+
+STR_TO_LOWER=${TEST_STR^^}
+echo "(To lower case)" ${TEST_STR,,}                     # Перевести все символы в нижний регистр
+echo "(To lower case for first letter)" ${STR_TO_LOWER,}   # Перевести в нижний регистр только первый символ
+
+echo "(Reverse case for every letter)" ${TEST_STR~~}     # Инвертировать регистр каждого символа в строке
+echo "(Reverse case for first letter)" ${TEST_STR~}      # Инвертировать регистр только первого символа
+```
+
+

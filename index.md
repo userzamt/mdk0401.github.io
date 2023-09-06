@@ -6,6 +6,8 @@
 
 [Урок 03. Shell. Переменные. Математика](Bash/Lesson03/lesson03.md)
 
+[ПР01 Арифметические операции в Bash](PR/PR01/pr01.md)
+
 [Урок 04. Подстановка параметров. Строки](Bash/Lesson04/lesson04.md)  
 
 [Урок 05. Массивы](Bash/Lesson05/lesson05.md)

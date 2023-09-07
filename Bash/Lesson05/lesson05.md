@@ -246,5 +246,18 @@ echo "Offset -1 length 3: ${indexed_array[@]: -4:3}"
 # Offset -1 length 3: and better than
 ```
 
+## Преобразование массивов
+В массивах доступа работа с регистром строк и заменой строк, так же как в строках.
+
+```bash
+my_array=( "Hydrogen" "Helium" "Lithium" "Beryllium" )
+
+echo ${my_array[@]^^}   # HYDROGEN HELIUM LITHIUM BERYLLIUM
+echo ${my_array[@],,}   # hydrogen helium lithium beryllium
+echo ${my_array[1],}    # helium
+
+echo ${my_array[@]/i/W} # Hydrogen HelWum LWthium BeryllWum
+```
+
 
 

@@ -164,4 +164,34 @@ echo "${my_array[*]}"
 # cycle FOR
 ```
 
+### Список ключей
+Чтобы распечатать ключи массива, необходимо добавить оператор ```!```  перед именем массива
+
+```bash
+${!array_name[index]}
+```
+
+Пример:
+
+```bash
+declare -a my_array=( "Hydrogen" "Helium" "Lithium" "Beryllium" )
+
+echo "${!my_array[@]}"
+# 0 1 2 3
+
+# ****************************
+declare -A arr
+
+arr[moth1]=Январь
+arr[moth2]=Февраль
+arr[moth3]=Март
+
+echo ${!arr[@]} 
+# moth3 moth2 moth1
+```
+
+
+
+
+
 

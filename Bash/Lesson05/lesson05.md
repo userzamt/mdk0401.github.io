@@ -214,7 +214,37 @@ echo ${#my_array}  # 8
 # "Hydrogen" = 8 символов
 ```
 
+### Срез
+Иногда необходимо извлечь определенные части массива
 
+```bash
+declare -a indexed_array=("Baeldung" "is" "cool" "and" "better" "than" "before")
+
+echo "Offset 1 length 3: ${indexed_array[@]:1:3}"
+# Offset 1 length 3: is cool and
+```
+
+Эта конструкция принимает *index смещения* и длину.
+
+```
+${array[@]:index:len}
+```
+
+Если опустить длину получим все элементы массива, начиная со смещения, до конца
+
+```bash
+echo "Offset 1 no length: ${indexed_array[@]:1}"
+# Offset 1 no length: is cool and better than before
+```
+
+Отрицательное смещение считается относительно с конца массива массива.
+
+Обратите также внимание на символ ```<пробел>``` при использовании отрицательных смещений. Если его не использовать, Bash путает его с другой конструкцией(операцией вычитание).
+
+```bash
+echo "Offset -1 length 3: ${indexed_array[@]: -4:3}"
+# Offset -1 length 3: and better than
+```
 
 
 

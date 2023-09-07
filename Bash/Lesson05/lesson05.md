@@ -123,4 +123,45 @@ declare -A myarr=(
 
 ```
 
+## Операции с массивами
+
+### Обращение к элементу массива
+На любой элемент можно ссылаться, используя следующий синтаксис:
+
+```bash
+${array_name[index]}
+```
+
+Синтаксис доступа к элементу массива аналогичен синтаксису большинства языков программирования. Фигурные скобки ```${}``` необходимы, чтобы избежать операторов раскрытия имени файла оболочки.
+
+```bash
+declare -a my_array=( "Hydrogen" "Helium" "Lithium" "Beryllium" )
+
+echo ${my_array[1]}     # Helium
+
+echo ${my_array}        # Hydrogen
+# массивы указывают на нулевой элемент
+```
+
+Если используются ```@``` или ```*``` в качестве индекса, слово расширяется до всех членов массива. 
+
+```bash
+declare -a my_array=( "Hydrogen" "Helium" "Lithium" "Beryllium" )
+
+echo "${my_array[@]}" 
+# "Hydrogen Helium Lithium Beryllium"
+```
+
+> [!IMPORTANT]
+> ```*``` возвращает все аргументы в виде одной строки (слова)
+> ```@``` то же самое, что и ```*```, но при этом каждый элемент массива представлен как отдельная строка (слово).
+
+```bash
+declare -a my_array=( "Hydrogen" "Helium" "Lithium" "Beryllium" )
+
+echo "${my_array[*]}" 
+# "Hydrogen" "Helium" "Lithium" "Beryllium"
+# cycle FOR
+```
+
 

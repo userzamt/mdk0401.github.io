@@ -290,4 +290,31 @@ echo "${my_array[@]}"
 unset  my_array
 ```
 
+## Добавление
+Bash позволяет добавлять элементы в массив
 
+```bash
+array=(
+    filenames
+)
+
+echo ${array[@]}      # filenames
+
+array+=(two)
+echo ${array[@]}      # filenames two
+
+array+=( $(ls) )      # удобно хранить список файлов
+echo ${array[@]}      # filenames two access.log array.sh basic.sh case.sh charcase.sh ...
+```
+
+Слияние массивов
+
+```bash
+arr1=(1 2 3 4 5 6 7 9 10)
+arr2=(one two three four)
+
+arr1+=( ${arr2[@]} )
+
+echo ${arr1[@]}               # 1 2 3 4 5 6 7 9 10 one two three four
+echo "Len arr = ${#arr1[@]}"  # 13
+```

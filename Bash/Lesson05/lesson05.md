@@ -259,5 +259,35 @@ echo ${my_array[1],}    # helium
 echo ${my_array[@]/i/W} # Hydrogen HelWum LWthium BeryllWum
 ```
 
+## Удаление
+
+При работе с массивами, некоторые встроенные команды Bash имеют несколько иной смысл. Например, ```unset``` - удаляет отдельные элементы массива, или даже массив целиком.
+
+Команда unset удаляет переменную, фактически устанавливает ее значение в null.
+
+```bash
+variable=hello              # Инициализация.
+echo "variable = $variable"
+
+unset variable              # Сброс.
+
+# Тот же эффект дает   variable=
+echo "(unset) variable = $variable"  # $variable = null.
+```
+
+Удаление значений из массива
+
+```bash
+my_array=( "Hydrogen" "Helium" "Lithium" "Beryllium" )
+
+unset  my_array[3]
+echo "${my_array[@]}"
+```
+
+Удаление массива
+
+```bash
+unset  my_array
+```
 
 

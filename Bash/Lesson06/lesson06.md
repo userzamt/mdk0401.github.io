@@ -62,4 +62,28 @@ fi
 
 Ввиду того что синтаксис ветвления в Bourne Shell был вдохновлен языком Алгол-68, а первые языки (такие как Алгол-68) испытывали тенденции быть похожими на английский язык, используется ключевое слово ```then```, чтобы обозначить начало блока ветвления. В современных реалиях это уже кажется неудобным архаизмом, но исторически сложилось так, как сложилось.
 
+```bash
+domain="youtube.com"
+text_search="update"
+
+if  grep $domain access.log --color
+then
+    echo "Find $domain"
+elif grep $text_search access.log --color
+then
+    echo "Find $text_search"
+else
+    echo "Not found"
+fi
+```
+
+```bash
+# true
+if ((1))
+then
+    echo "Result OK"
+else
+    echo "False"
+fi
+```
 

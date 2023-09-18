@@ -20,6 +20,8 @@
 
 [Урок 07. Циклы](Bash/Lesson07/lesson07.md)
 
+[ПР04 Управление потоком в Bash](PR/PR04/pr04.md)
+
 [Урок 08. Ввод и вывод](Bash/Lesson08/lesson08.md)
 
 [Урок 09. Функции](Bash/Lesson09/lesson09.md)

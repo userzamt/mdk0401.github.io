@@ -26,6 +26,8 @@
 
 [Урок 09. Ввод и вывод](Bash/Lesson09/lesson09.md)
 
+[ПР05 Использование стандартного потока ввода/вывода](PR/PR05/pr05.md)
+
 [Урок 10. Сигналы Linux](Bash/Lesson10/lesson10.md)
 
 [Урок 11. Функции](Bash/Lesson11/lesson11.md)

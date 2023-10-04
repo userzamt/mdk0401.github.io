@@ -32,6 +32,8 @@
 
 [Урок 11. Функции](Bash/Lesson11/lesson11.md)
 
+[ПР06 Создание функций в Bash](PR/PR06/pr06.md)
+
 [Урок 12. sed и обработка текстов](Bash/Lesson12/lesson12.md)
 
 [Урок 13. Язык обработки данных awk](Bash/Lesson13/lesson13.md)

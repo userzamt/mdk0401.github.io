@@ -325,11 +325,29 @@ awk -F ';' '{if ($4 > 70) print}' supplier_k_import.csv
 Как уже было сказано, условный оператор awk может содержать блок `else`
 
 ```bash
-awk -F ';' '{if ($4 > 70) {printf "\033[31m%s %s\033[0m\n", $2,toupper($1)} else print $2, $1}' supplier_k_import.csv
+awk -F ';' '{if ($4 > 70) {printf "\033[31m%s %s\033[0m\n", $2, toupper($1)} else print $2, $1}' supplier_k_import.csv
 ```
 
 > [!WARNING]
 > Данные конструкции лучше всего писать в отдельно скрипте
+
+## Циклы
+В `Awk` есть три типа циклов:
+
++ for
++ while
++ do-while
+
+а также два управляющих для циклов слова:
+
++ break
++ continue
+
+> [!NOTE]
+> Синтаксис аналогичен языкам Си, C#, JS
+
+> [!WARNING]
+> Целесообразнее использовать циклы в отдельным `awk-скриптах`
 
 ## Встроенные функции
 [Встроенные функции](https://www.gnu.org/software/gawk/manual/html_node/Built_002din.html#Built_002din)

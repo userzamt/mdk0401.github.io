@@ -38,6 +38,8 @@
 
 [Урок 13. Язык обработки данных awk](Bash/Lesson13/lesson13.md)
 
+[ПР07 Обработка больших объемов текста в Bash](PR/PR07/pr07.md)
+
 [Урок 14. Регулярные выражения](Bash/Lesson14/lesson14.md)
 
 **PowerShell**

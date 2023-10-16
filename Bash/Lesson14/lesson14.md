@@ -294,3 +294,17 @@ grep -E --color 'О{,3}' supplier_k_import.csv
 grep -E --color 'ООО|ОАО|ЗАО' supplier_k_import.csv
 ```
 
+## Группировка
+Элементы регулярных выражений можно объединять и ссылаться на них как на один элемент. Делается это с помощью круглых скобок.
+
+```bash
+grep -E --color 'в(ы|о)з' gnugpl.txt
+
+grep -E --color 'в(ы|о)*з' gnugpl.txt
+```
+
+```bash
+ls /bin/ | grep -E --color '^b|w'
+
+ls /bin/ | grep -E --color '^(b|w)'
+```

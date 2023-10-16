@@ -129,3 +129,17 @@ grep -n '^GNU General Public License$' --color gnugpl.txt
 grep -n '^$'  gnugpl.txt
 ```
 
+## Символ «точка»
+Точка используется для поиска любого одиночного символа, за исключением символа перевода строки. 
+
+```bash
+echo "sh is not bash. but korn shell the best" | grep --color '.sh'
+```
+
+Точка `.` означает **не менее одного** любого символа, за исключением символа перевода строки (`\n`).
+
+```bash
+grep --color '..ли' gnugpl.txt
+```
+
+

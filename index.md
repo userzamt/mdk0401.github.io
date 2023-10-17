@@ -44,7 +44,7 @@
 
 **PowerShell**
 
-[Урок 15. PowerShell. Основные понятия](Powershell/Lesson13/lesson13.md)
+[Урок 15. PowerShell. Основные понятия](PowerShell/Lesson15/lesson15.md)
 
 [Урок 16. PowerShell. Типы данных](.)
 

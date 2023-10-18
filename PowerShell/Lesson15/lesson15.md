@@ -158,7 +158,7 @@ tasklist.exe
 В этом случае команда `Get-Date` возвращает .NET-объект DateTime, имеющий свойство, при обращении к которому вычисляется день недели для соответствующей даты. 
 
 ## Установка PowerShell
-**Windows Management Framework **(WMF) — это согласованный интерфейс управления для Windows. WMF обеспечивает удобный способ управления несколькими версиями клиента Windows и Windows Server. Пакеты установщика WMF содержат обновления для функций управления и доступны для более старых версий Windows.
+**Windows Management Framework** (WMF) — это согласованный интерфейс управления для Windows. WMF обеспечивает удобный способ управления несколькими версиями клиента Windows и Windows Server. Пакеты установщика WMF содержат обновления для функций управления и доступны для более старых версий Windows.
 
 При установке WMF добавляются или обновляются следующие компоненты:
 
@@ -173,3 +173,9 @@ tasklist.exe
 
 [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
+## Интегрированная среда сценариев Windows PowerShell (ISE)
+![ISE](ise.JPG)
+
+```powershell
+$PSVersionTable
+```

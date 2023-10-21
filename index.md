@@ -46,7 +46,7 @@
 
 [Урок 15. PowerShell. Основные понятия](PowerShell/Lesson15/lesson15.md)
 
-[Урок 16. PowerShell. Типы данных](.)
+[Урок 16. PowerShell. Типы данных](PowerShell/Lesson16/lesson16.md)
 
 [Урок 13. Работа и настройка оболочки PowerShell](.)
 

@@ -48,7 +48,7 @@
 
 [Урок 16. PowerShell. Типы данных](PowerShell/Lesson16/lesson16.md)
 
-[Урок 13. Работа и настройка оболочки PowerShell](.)
+[Урок 17. Работа и настройка оболочки PowerShell](PowerShell/Lesson17/lesson17.md)
 
 [Урок 13. Объединение команд](.)
 

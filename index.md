@@ -54,7 +54,7 @@
 
 [Урок 18. Объединение команд](PowerShell/Lesson18/lesson18.md)
 
-[Урок 19. Поток управления](.)
+[Урок 19. Поток управления](PowerShell/Lesson19/lesson19.md)
 
 [Урок 20. Функции в PowerShell](.)
 

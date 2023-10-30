@@ -72,3 +72,31 @@ if ($age -lt 12) {
     Write-Host "Добро пожаловать"
 }
 ```
+
+## Цикл While 
+В `PowerShell` поддерживаются несколько видов циклов. Самый простой из них — цикл `While`, в котором команды выполняются до тех пор, пока проверяемое условие имеет значение `$True`.
+
+```powershell
+While (условие) {блок_команд} 
+```
+
+При выполнении инструкции `While` оболочка `PowerShell` вычисляет раздел *условие* инструкции, прежде чем перейти к разделу *блок_команд*. Условие в инструкции принимает значения `$True` или `$False`. До тех пор, пока условие имеет значение `$True`, `PowerShell` повторяет выполнение раздела *блок_команд*. 
+
+> [!NOTE]
+> Как и в инструкции `If`, в условном выражении цикла `While` может использоваться конвейер команд `PowerShell`. 
+
+Раздел *блок_команд* инструкции `While` содержит одну или несколько команд, которые выполняются каждый раз при входе в цикл и его повторении.
+
+```powershell
+# Get All Items from a Folder
+$Files = Get-ChildItem -Path "C:\Logs"
+$i = 0
+
+# Move All files and Folders to a Arhive Location
+while ($i -lt $Files.Count) {
+    $File = $Files[$i]
+    $NewLocation = "C:\Archive\$($File.Name)"
+    Move-Item -Path $file.FullName -Destination $NewLocation
+    $i++
+}
+```

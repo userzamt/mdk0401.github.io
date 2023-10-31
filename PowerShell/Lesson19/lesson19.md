@@ -237,6 +237,31 @@ $dir.foreach({Write-Host $_.Length})
 
 Метод `foreach()` работает значительно быстрее предыдущих двух, и эта разница будет заметна при обработке больших наборов данных. 
 
+## Инструкции Break и Continue 
+Инструкция `Break` позволяет выйти из цикла любого типа, не дожидаясь окончания его итераций. 
+
+```powershell
+for ( ; ; ) { 
+    $num = Read-Host "Input number"
+
+    if($num -gt 5) {
+       break
+    }
+}
+```
+
+Инструкция `Continue` осуществляет переход к следующей итерации цикла любого типа. 
+
+```powershell
+$services = Get-Service
+
+foreach ($s in $services) {
+    if($s.Status -eq "Stopped") {
+        continue
+    }
+    Write-Host $s.Name ":" $s.Status
+}
+```
 
 
 

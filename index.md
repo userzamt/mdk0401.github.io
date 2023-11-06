@@ -58,7 +58,7 @@
 
 [ПР09 Поток управления](PR/PR09/pr09.md)
 
-[Урок 20. Функции в PowerShell](.)
+[Урок 20. Функции в PowerShell](PowerShell/Lesson20/lesson20.md)
 
 [Урок 21. Модули](.)
 

@@ -161,3 +161,71 @@ function Get-LastLog($h, $n = 100) {
 > [!IMPORTANT]
 > При вызове функции может быть указано большее количество фактических аргументов, чем было задано формальных параметров. При этом *"лишние"* аргументы будут помещены в массив `$Args`. 
 
+## Возвращаемые значения 
+В традиционных языках программирования функция обычно возвращает единственное значение определенного типа. В оболочке `PowerShell` дело обстоит иначе — здесь результаты всех выражений или конвейеров, вычисляемые внутри функции, направляются в выходной поток.
+
+```powershell
+function Show-Result {
+    $num = 345
+    2+2
+    echo "Hello world"
+    # Write-Host $num
+}
+
+
+$res = Show-Result
+
+# Write-Host $res
+# $res.GetType()
+```
+
+Командлет `Write-Host` выводит строку непосредственно на консоль, а не в выходной поток.
+
+В языке `PowerShell` имеется инструкция `Return`, выполняющая немедленный выход из функции
+
+```powershell
+function Use-Return ([int] $R){
+    return [System.Math]::PI * $R*$R
+}
+
+Use-Return 5
+```
+
+> [!IMPORTANT]
+> Инструкция `Return` включена в язык `PowerShell` скорее как дань традиции, так как аналогичные операторы есть практически во всех языках программирования. Однако следует помнить, что `PowerShell` является оболочкой, и имеет смысл говорить не о единственном значении, возвращаемом функцией, а о выходном потоке, в который функция помещает результаты вычисления выражений.
+
+Возвращаемых значений может быть несколько. По умолчанию всегда возвращается массив. 
+
+```powershell
+# PowerShell 7.0 introduced a new syntax using the ternary operator.
+# 
+function Get-MaxMinAvg ($n1, $n2) {
+    if ($n1 -lt $n2) {
+        $min = $n1
+        $max = $n2
+    } elseif ($n1 -eq $n2) {
+        $min = $max = $n1
+    } else {
+        $min = $n2
+        $max = $n1
+    }
+
+    $avg = ($n1 + $n2) / 2
+
+    return $max, $min, $avg    
+}
+
+$result = Get-MaxMinAvg 75 25
+Write-Host $result
+```
+
+В данном примере так же возвращается массив
+
+```powershell
+function Get-HeavyProcess {
+   Get-Process | Sort-Object WS -Descending | Select-Object -First 5 
+}
+
+$p = Get-HeavyProcess
+$p[1]
+```

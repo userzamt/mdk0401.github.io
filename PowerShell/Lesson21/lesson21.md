@@ -209,3 +209,24 @@ Find-Module -Name *VMware*
 ```
 > [!NOTE]
 > Команда `Find-Module` ничего не загружает, а просто показывает вам, что есть в *PowerShell Gallery*.
+
+## Установка модулей
+Если вы хотите установить модуль, воспользуйтесь командой `Install-Module`. 
+
+```powershell
+Install-Module -Name SimpySql
+```
+
+Команда загрузит модуль и поместит его в расположение модулей **All Users** в папке *C:\Program Files\WindowsPowerShell\Modules*. 
+
+```powershell
+Get-Module -Name SimpySql | Select-Object –Property ModuleBase
+```
+
+
+
+
+
+
+
+

@@ -54,4 +54,56 @@ $env:PSModulePath -split ';'
 > [!IMPORTANT]
 > Вы можете добавить свою папку с модулями в переменную среды `PSModulePath`, но имейте в виду, что в этом случае новая папка добавится только в текущий сеанс.
 
+## Импорт модулей
+Если путь к папке модуля уже помещен в переменную среды `PSModulePath`, вам остается лишь импортировать его в текущий сеанс. Сейчас у `PowerShell` есть функция автоматического импорта, и, если у вас установлен модуль, просто вызовите нужную функцию, а `PowerShell` **автоматически** ее туда **импортирует**.
+
+Тем не менее важно понимать саму процедуру импорта.
+Давайте воспользуемся встроенным модулем под названием `NetAdapter`. 
+
+> [!NOTE]
+> [Microsoft learn NetAdapter](https://learn.microsoft.com/en-us/powershell/module/netadapter/?view=windowsserver2022-ps)
+
+В запускаем команду `Get-Module` дважды: один раз в новом сеансе PowerShell 
+
+```powershell
+Get-Module
+```
+
+и еще один раз  после использования команды `Get-NetAdapter`, из модуля `NetAdapter`. 
+
+```powershell
+Get-NetAdapter
+Get-Module
+```
+
+Как видите, модуль `NetAdapter` автоматически импортировался после использования команды. Функция автоматического импорта обычно справляется сама. Если команда внутри модуля по какой-то причине недоступна, то, вероятно, есть проблема с модулем.
+
+Чтобы вручную импортировать модуль, используйте команду `Import-Module`
+
+```powershell
+Import-Module -Name NetAdapter
+
+Import-Module -Name NetAdapter -Verbose
+```
+
+Использование ключа `-Verbose` приводит `Import-Module` к выводу отчета о ходе загрузки модуля.
+
+Команда `Remove-Module` выгружает модуль из сеанса.
+
+```powershell
+Remove-Module -Name NetAdapter
+```
+
+Так же допустимо импортировать только те функции из модуля, которые необходимы
+
+```powershell
+Import-Module -Name NetAdapter -Function Get-NetAdapter
+```
+
+В этом примере импортируются все доступные модули по пути, указанном переменной `$env:PSModulePath` среды, в текущий сеанс.
+
+```powershell
+Get-Module -ListAvailable | Import-Module
+```
+
 

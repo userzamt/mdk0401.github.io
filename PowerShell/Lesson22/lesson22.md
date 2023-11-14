@@ -154,3 +154,15 @@ Import-Csv .\user.csv -Delimiter ';' | ConvertTo-Json -Compress
 ```
 
 Атрибут всегда будет ключом узла, а его значение — значением узла.
+
+## XML
+**XML** (*англ. eXtensible Markup Language*) — расширяемый язык разметки, предназначенный для хранения и передачи данных.
+
+[Дока XML](https://doka.guide/tools/xml/?ysclid=loy8geluno795571080)
+
+```powershell
+$x = [xml](Get-Content .\msxml.xml)
+$x.catalog.book
+
+select-xml -Xml $x -XPath "//book/title" | ForEach-Object {$_.ToString()}
+```

@@ -76,3 +76,26 @@ Import-Csv .\materials_k_import.csv -Header "Name","Type","Img","Cost","CountOnS
 
 Import-Csv .\materials_k_import.csv -Header "Name","Type","Img","Cost","CountOnStorage","MinCount","CountOnPackage","Unit" | Select-Object -Skip 1 | Format-Table
 ```
+
+### Создание CSV-файлов 
+Вы можете написать CSV-файл от руки, но это потребует немалых затрат времени и энергии, особенно если речь идет о тысячах строк. К счастью, у PowerShell есть собственный командлет для создания CSV-файлов — `Export-Csv`. Его можно использовать для создания CSV-файлов **из любого существующего объекта** PowerShell. Вам достаточно указать, какие объекты использовать в качестве строк и где должен быть создан файл. 
+
+Давайте предположим, что вы хотите запросить все запущенные на вашем компьютере процессы и записать их название, издателя и описание. Можно использовать команду `Get-Process` и `Select-Object`, чтобы ограничить список свойств
+
+```powershell
+Get-Process | Sort-Object -Descending WS | Select-Object -First 10 -Property Id, Name, WS, Company, Description
+```
+
+Сохранении вывода с помощью `Export-Csv`
+
+```powershell
+Get-Process | Sort-Object -Descending WS | Select-Object -First 10 -Property Id, Name, WS, Company, Description | Export-Csv HeavyProcess.csv -NoTypeInformation
+
+Get-Content .\HeavyProcess.csv
+```
+
+> [!IMPORTANT]
+> Параметр `NoTypeInformation` не является обязательным, но, если вы его не используете, в верхней строке вашего CSV-файла будет указан тип объекта, из которого он был получен. Если вы повторно импортируете CSV-файл обратно в PowerShell, это будет вам мешать. Строка выглядит примерно как *#TYPE Selected.System.Diagnostics.Process*.
+
+> [!NOTE]
+> Вам так же доступен параметр `Delimiter` для указаниям символа разделителя. По умолчанию используется запятая *,*

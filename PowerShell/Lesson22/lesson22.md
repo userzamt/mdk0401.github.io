@@ -65,3 +65,14 @@ Import-Csv .\user.csv -Delimiter ';'
 ```powershell
 Import-Csv .\materials_k_import.csv | Where-Object {$_.'Наименование материала' -like '*нить*'} | Format-Table
 ```
+
+### Определяем собственный заголовок 
+*Что делать, если у вас есть таблица данных, но вы хотите сделать строку за- головка более удобной для пользователя?* Команда `Import-Csv` справится и с этим. Как и в случае с новым разделителем, ей достаточно просто передать параметр. Параметр `Header` используется для передачи серии строк, разделенных запятыми (новых заголовков).
+
+```powershell
+Import-Csv .\materials_k_import.csv -Header "Name","Type","Img","Cost","CountOnStorage","MinCount","CountOnPackage","Unit"
+
+Import-Csv .\materials_k_import.csv -Header "Name","Type","Img","Cost","CountOnStorage","MinCount","CountOnPackage","Unit" | Format-Table
+
+Import-Csv .\materials_k_import.csv -Header "Name","Type","Img","Cost","CountOnStorage","MinCount","CountOnPackage","Unit" | Select-Object -Skip 1 | Format-Table
+```

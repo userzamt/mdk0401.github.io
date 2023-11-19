@@ -13,4 +13,32 @@
 > [!NOTE]
 > Сотрудники корпорации Microsoft внедрили удаленное управление в версии *PowerShell v2*. Оно было создано на основе службы *Windows Remote Management (WinRM)*. По этой причине удаленное управление PowerShell иногда ассоциируют с термином **WinRM**.
 
+Но прежде, поговорим о...
+
+<!-- TODO необходимо проверить -->
+## Удаленное взаимодействие с Windows PowerShell без настройки
+Многие командлеты Windows PowerShell имеют параметр `ComputerName`, который позволяет собирать данные и изменять параметры одного или нескольких удаленных компьютеров. Эти командлеты используют разные протоколы связи и работают во всех операционных системах Windows без специальной настройки.
+
+В эти командлеты входят следующие:
+
++ `Restart-Computer`
++ `Test-Connection`
++ `Clear-EventLog`
++ `Get-EventLog`
++ `Get-HotFix`
++ `Get-Process`
++ `Get-Service`
++ `Set-Service`
++ `Get-WinEvent`
++ `Get-WmiObject`
+
+Обычно командлеты, которые поддерживают удаленное взаимодействие без специальной настройки, имеют параметр `ComputerName`, но не имеют параметра `Session`. Чтобы найти эти командлеты в сеансе, используйте следующую команду:
+
+```powershell
+Get-Command | Where-Object {
+    $_.Parameters.Keys -contains "ComputerName" -and
+    $_.Parameters.Keys -notcontains "Session"
+}
+```
+
 
